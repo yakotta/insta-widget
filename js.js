@@ -30,16 +30,28 @@ $(document).ready(function(){
             // 2. get the "content" prop'erty from the $template variable
             var content = $ig_image_template.prop('content');
 
-            var nodes = response.user.media.nodes;
+            var nodes = response.user.media.nodes.slice(0,12);
+
+            // 2.5 determine the size of the template
+            /* var template_size = $ig_image_template.attr("class");
+            console.log(template_size);
+
+            if(template_size === "widget-small"){
+                nodes = nodes.slice(0,6);
+                $(".box").addClass("col-lg-2");
+            } */
+
             var $insta_widget = $('#insta-widget');
 
-            nodes.slice(0,12).forEach(function(element){
+            nodes.forEach(function(element){
                 // 3. importing the templates content into the document as a new html element
                 var $clone = $(document.importNode(content,true));
 
                 $clone.find("img").attr("src", element.thumbnail_src);
                 $clone.find(".likes").append(shortenLargeNumber(element.likes.count));
                 $clone.find(".comments").append(shortenLargeNumber(element.comments.count));
+                $clone.find(".caption").append(element.caption);
+                console.log(element.caption);
                 $clone.find("a").attr("href", function(){ return $(this).attr("href") + element.code });
 
                 $insta_widget.append($clone);

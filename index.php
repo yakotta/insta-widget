@@ -10,7 +10,8 @@
     <body>
         <div id="insta-widget">
             <div class="heading"><h1>Instagram</h1></div>
-            <template id="ig_image_template">
+            <!-- Make class widget-small or widget-large-->
+            <template id="ig_image_template" class="widget-small">
                 <div class="box col-lg-2 col-md-3 col-sm-4 col-xs-6">
                     <div class="info">
                         <div class="likes">
@@ -19,6 +20,7 @@
                         <div class="comments">
                             <span class="glyphicon glyphicon-comment"></span>
                         </div>
+                        <div class="caption truncated"></div>
                     </div>
                     <a class="info" href="https://instagram.com/p/" target="_blank"></a>
                     <img src="#image" />
