@@ -1,4 +1,25 @@
 $(document).ready(function(){
+    // https://stackoverflow.com/questions/9461621/how-to-format-a-number-as-2-5k-if-a-thousand-or-more-otherwise-900-in-javascrip
+    function shortenLargeNumber(num) {
+        var units = ['k', 'M', 'G'],
+        decimal;
+
+        for(var i=units.length-1; i>=0; i--) {
+            decimal = Math.pow(1000, i+1);
+
+            if(num <= -decimal || num >= decimal) {
+                var places = num.toString().length;
+                if (places % 3 === 0){
+                    return +(num / decimal).toFixed(0) + units[i];
+                } else {
+                    return +(num / decimal).toFixed(1) + units[i];
+                }
+            }
+        }
+
+        return num;
+    }
+
     // Look here at this: http://api.jquery.com/jQuery.getJSON/#jQuery-getJSON-url-data-success
     var promise = $.getJSON("https://www.instagram.com/instagram/?__a=1");
     promise.done(function(response){
@@ -17,8 +38,8 @@ $(document).ready(function(){
                 var $clone = $(document.importNode(content,true));
 
                 $clone.find("img").attr("src", element.thumbnail_src);
-                $clone.find(".likes").append(element.likes.count);
-                $clone.find(".comments").append(element.comments.count);
+                $clone.find(".likes").append(shortenLargeNumber(element.likes.count));
+                $clone.find(".comments").append(shortenLargeNumber(element.comments.count));
                 $clone.find("a").attr("href", function(){ return $(this).attr("href") + element.code });
 
                 $insta_widget.append($clone);
@@ -26,8 +47,8 @@ $(document).ready(function(){
 
             $insta_widget.append(
                 '<div class="footing"><a href="https://instagram.com/' +
-                 response.user.username +
-                 '/" target="_blank"><h2>See More</h2></a></div>'
+                response.user.username +
+                '/" target="_blank"><h2>See More</h2></a></div>'
             );
 
             /* User Info */
@@ -37,8 +58,8 @@ $(document).ready(function(){
                 '<div class="user-info"><img src="' +
                 user.profile_pic_url +
                 '" /> ' + user.full_name +
-                ' / ' + user.followed_by.count +
-                ' followers / ' + user.media.count +
+                ' / ' + shortenLargeNumber(user.followed_by.count) +
+                ' followers / ' + shortenLargeNumber(user.media.count) +
                 ' posts</div>'
             );
 
