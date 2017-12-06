@@ -8,11 +8,25 @@
     </head>
 
     <body>
-        <div id="insta-widget">
-            <div class="heading"><h1>Instagram</h1></div>
-            <!-- Make class widget-small or widget-large-->
-            <template id="ig_image_template" class="widget-small">
-                <div class="box col-lg-2 col-md-3 col-sm-4 col-xs-6">
+        <div id="insta-widget" class="widget-large">
+            <div class="heading">
+                <h1>Instagram</h1>
+            </div>
+            <div class="body clearfix">
+                <div class="loading">Loading...</div>
+            </div>
+            <div class="footing">
+                <h2><a href="#instagram_link" target="_blank">See More</a></h2>
+                <div class="user-info">
+                    <img src="#link" />
+                    <span class="full-name"></span>
+                    <span class="follower-count"></span> followers
+                    <span class="post-count"></span> posts
+                </div>
+            </div>
+            
+            <template id="ig_image_template">
+                <div class="box col-md-3 col-sm-4 col-xs-6">
                     <div class="info">
                         <div class="likes">
                             <span class="glyphicon glyphicon-heart"></span>
@@ -20,7 +34,7 @@
                         <div class="comments">
                             <span class="glyphicon glyphicon-comment"></span>
                         </div>
-                        <div class="caption truncated"></div>
+                        <!--div class="caption truncated"></div-->
                     </div>
                     <a class="info" href="https://instagram.com/p/" target="_blank"></a>
                     <img src="#image" />

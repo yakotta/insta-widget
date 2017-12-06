@@ -2,14 +2,14 @@
     padding: 2px;
 }
 
-.box {
+#insta-widget .box {
     display: inline-block;
     position: relative;
     background-color: white;
     padding: 2px;
 }
 
-.box .info {
+#insta-widget .box .info {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -24,11 +24,11 @@
     z-index: 2;
 }
 
-.box:hover .info {
+#insta-widget .box:hover .info {
     opacity: 1;
 }
 
-.box img {
+#insta-widget .box img {
     height: 100%;
     width: 100%;
     transition: opacity .25s ease-in-out;
@@ -38,52 +38,74 @@
     z-index: 1;
 }
 
-.box:hover img {
+#insta-widget .box:hover img {
     opacity: 0.33;
 }
 
-.heading, .footing {
+#insta-widget .heading, .footing {
     text-align: center;
     color: black;
 }
 
-.heading a, .footing a {
+#insta-widget .heading a, .footing a {
     text-decoration: none;
     color: black;
 }
 
-div.likes,
-div.comments {
+#insta-widget .likes,
+#insta-widget .comments {
     padding: 5px;
     font-size: 1.8em;
 }
 
-span.glyphicon {
+#insta-widget span.glyphicon {
     font-size: .8em;
 }
 
-h1 {
+/* #insta-widget h1 {
     font-size: 2.5em;
 }
 
-h2 {
+#insta-widget h2 {
     font-size: 1.5em
-}
+} */
 
-.user-info {
+#insta-widget .body .loading {
     text-align: center;
 }
 
-.user-info img {
+#insta-widget .footing {
+    display: none;
+}
+
+#insta-widget.loaded .footing {
+    display: block;
+}
+
+#insta-widget.loaded.widget-small .footing {
+    display: none;
+}
+
+#insta-widget .user-info {
+    text-align: center;
+}
+
+#insta-widget .user-info img {
     height: 40px;
     border-radius: 100%
 }
 
-.truncated { 
+#insta-widget .user-info span.follower-count:before,
+#insta-widget .user-info span.post-count:before {
+    content: "/";
+    padding: 5px;
+}
+
+/* #insta-widget .truncated { 
     float: left; 
     max-width: 100%; 
     overflow: hidden; 
     text-overflow: ellipsis; 
     white-space: nowrap; 
     clear: lef
-  }
+  } */
