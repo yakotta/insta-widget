@@ -62,7 +62,7 @@ $(document).ready(function(){
                 // $clone.find(".caption").append(element.caption);
                 
                 // 7.5 Turn each display box into a link to the original instagram page
-                $clone.find("a").attr("href", function(){ return $(this).attr("href") + element.code });
+                $clone.find("a").attr("href", "https://instagram.com/p/" + element.code );
 
                 // 7.6 Display each image/display box in the widget
                 $insta_widget.find(".body").append($clone);

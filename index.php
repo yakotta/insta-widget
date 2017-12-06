@@ -16,9 +16,9 @@
                 <div class="loading">Loading...</div>
             </div>
             <div class="footing">
-                <h2><a href="#instagram_link" target="_blank">See More</a></h2>
+                <h2><a href="#link" target="_blank">See More</a></h2>
                 <div class="user-info">
-                    <img src="#link" />
+                    <img src="#image" />
                     <span class="full-name"></span>
                     <span class="follower-count"></span> followers
                     <span class="post-count"></span> posts
@@ -36,7 +36,7 @@
                         </div>
                         <!--div class="caption truncated"></div-->
                     </div>
-                    <a class="info" href="https://instagram.com/p/" target="_blank"></a>
+                    <a class="info" href="#link" target="_blank"></a>
                     <img src="#image" />
                 </div>
             </template>
