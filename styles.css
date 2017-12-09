@@ -1,5 +1,6 @@
 #insta-widget {
     padding: 2px;
+    color: black;
 }
 
 #insta-widget .box {
@@ -20,7 +21,7 @@
     opacity: 0;
     font-family: "Arial";
     transition: opacity .25s ease-in-out;
-   -webkit-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
     z-index: 2;
 }
 
@@ -42,9 +43,12 @@
     opacity: 0.33;
 }
 
-#insta-widget .heading, .footing {
+#insta-widget .heading {
+    text-transform: uppercase;
+}
+
+#insta-widget .footing {
     text-align: center;
-    color: black;
 }
 
 #insta-widget .heading a, .footing a {
@@ -100,12 +104,3 @@
     content: "/";
     padding: 5px;
 }
-
-/* #insta-widget .truncated { 
-    float: left; 
-    max-width: 100%; 
-    overflow: hidden; 
-    text-overflow: ellipsis; 
-    white-space: nowrap; 
-    clear: lef
-  } */
